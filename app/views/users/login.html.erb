@@ -1,7 +1,56 @@
-<h2> Login </h2>
-<%= form_with url: "/login" do |form| %>
-	Email<p> <%= form.text_field :email_address %><p>
-	Password<p> <%= form.password_field :password %><p>
-	<%= form.submit :login %>
-<% end %>
-<%= notice %>
+<!-- LOGO -->
+<style>
+    body{
+        padding:0;
+        margin:0;
+        background:black;
+    }
+    .card-body {
+        background: #292b2f;
+        color: white;
+    }
+    .cover-container {
+    max-width: 42em;
+    }
+</style>
+<div class="d-flex h-100 text-center text-white">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <%= render 'layouts/navbar' %>
+    </div>
+</div>
+<div class="text-center">
+    <!--  <a href="/">
+      <img src="<%= asset_path 'logo.png' %>" width="300px" alt="profile">
+       
+    </a>
+    <p style="color:white">Tutoree</p>-->
+</div>
+<!-- CONTAINER -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 ">
+            <div class="card border-0 my-5 p-0 mb-5">						
+                <!-- FORM -->							
+                <div class="card-body p-lg-5">
+                    <%= form_with url: "/login" do |form|%>
+                        <div class="text-center mb-3">
+                            <p class='fs-1'>Sign in</p>
+                        </div>
+                        <div class="mb-3">
+                            <p> <%= form.text_field :email_address, class: 'form-control', placeholder: 'Email' %><p>
+                        </div>
+                        <div class="mb-3">
+                            <p> <%= form.password_field :password, class: 'form-control', placeholder: 'Password' %><p>	 
+                        </div>
+                        <div class="text-center">
+                            <%= form.submit :login, class: 'btn btn-primary px-5 mb-5 w-100', value: 'Login'  %>
+                        </div>
+                    <% end %>
+                    <div id="emailHelp" class="form-text text-center mb-5 text-light"> Not Registered? 
+                        <a href="/new" class="text-danger fw-bold"> Create an Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

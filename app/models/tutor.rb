@@ -1,8 +1,7 @@
 class Tutor
-  belongs_to :user_type
-  has_one :accepted_tutee
   include Mongoid::Document
   include Mongoid::Timestamps
+
   field :first_name, type: String
   field :last_name, type: String
   field :profile_picture, type: String
@@ -11,10 +10,10 @@ class Tutor
   field :occupation, type: String
   field :skill_category, type: String
   field :certification, type: String
-  field :price_per_hour, type: Decimal
-  field :average_rating, type: Decimal
-  field :number_of_reviews, type: Integer
-  field :number_of_tutees, type: Integer
+  field :price_per_hour, type: BigDecimal
   field :is_active, type: Mongoid::Boolean
-  field :payment_info, type: String
+
+  belongs_to :user
+  has_one :accepted_tutee
+  accepts_nested_attributes_for :accepted_tutee
 end

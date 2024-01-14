@@ -1,0 +1,36 @@
+<!-- LOGO -->
+<style>
+    body{
+        background:black;
+    }
+    .card-body {
+        background: #292b2f;
+        color: white;
+    }
+</style>
+<div class="text-center">
+</div>
+<!-- CONTAINER -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 ">
+            <div class="card border-0 my-5 p-0 mb-5">						
+                <!-- FORM -->							
+                <div class="card-body p-lg-5">
+                        <div class="text-center mb-3">
+                            <p class='fs-1'>Sign in</p>
+                        </div>
+                        <%= render 'form', user: @user %>
+                    <div id="emailHelp" class="form-text text-center mb-5 text-light"> Do you have an account? 
+                        <a href="/login" class="text-danger fw-bold"> Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
